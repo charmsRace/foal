@@ -1,23 +1,20 @@
-// Generated automatically by nearley, version 2.11.1
+// Generated automatically by nearley, version 2.13.0
 // http://github.com/Hardmath123/nearley
 (function () {
 function id(x) { return x[0]; }
 
-    let lexer = require('./lexer.js');
+    const nuller = () => null;
 var grammar = {
-    Lexer: lexer,
+    Lexer: undefined,
     ParserRules: [
-    {"name": "foal", "symbols": ["set"]},
-    {"name": "set$ebnf$1", "symbols": []},
-    {"name": "set$ebnf$1", "symbols": ["set$ebnf$1", "prim"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "set", "symbols": ["set$ebnf$1"]},
-    {"name": "prim", "symbols": ["n"]},
-    {"name": "prim", "symbols": ["die", "n"]},
-    {"name": "die", "symbols": [(lexer.has("die") ? {type: "die"} : die)], "postprocess":  d => ({
-            type: d[0].type,
-            value: d[0].value
-        }) },
-    {"name": "n", "symbols": [(lexer.has("n") ? {type: "n"} : n)], "postprocess": d => parseFloat(d[0].value)}
+    {"name": "foal", "symbols": ["number"]},
+    {"name": "number$ebnf$1", "symbols": []},
+    {"name": "number$ebnf$1", "symbols": ["number$ebnf$1", "digit"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "number", "symbols": ["number$ebnf$1"]},
+    {"name": "digit", "symbols": ["_", /[0-9]/, "_"]},
+    {"name": "_$ebnf$1", "symbols": []},
+    {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", /[ \t\n\v\f]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "_", "symbols": ["_$ebnf$1"], "postprocess": nuller}
 ]
   , ParserStart: "foal"
 }
