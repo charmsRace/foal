@@ -1,0 +1,87 @@
+d6
+d6 + 2
+3d6 - 9
+
+
+
+abc = [a, b, c]
+^abc= [^, [a, b, c]]
+^ab+cd
+
+
+If no delims, full delims
+^ 
+
+
+^abc = ^{abc}e
+
+
+
+
+
+
+
+
+
+
+N int scalar
+dN die scalar
+
+N int scalar
+dN die scalar
+
+1dN collection
+
+{a b c} union of a b c
+    a = a,
+    b = {
+        c,
+        d
+    },
+    e = e
+{a b e} = {a c d e}
+
+
++ sum
+# count
+^ max
+-
+
+[N] = { 1 2 ... N }
+
+^  max (largest 1)
+^N largest N
+
+v  min (least 1)
+vN least N
+
+?p return 1 with probability p
+
+
+
+Use cases
+
+?=d20
+
+
+f?! d20-2
+f?! (^ 2d6) + 2
+
+f?! ^ { d6, d6+10 }
+
+
+{} vs []
+distinguishable
+ordered
+
+
+
+
+
+
+
+
+
+
+
+
