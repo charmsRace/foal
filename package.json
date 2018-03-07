@@ -1,0 +1,20 @@
+{
+  "name": "foal",
+  "version": "0.1.0",
+  "description": "A DSL for dice rolls",
+  "main": "index.js",
+  "repository": "https://github.com/calamitizer/foal.git",
+  "scripts": {
+      "compile": "nearleyc ./src/foal.ne -o ./src/foal.js",
+      "test-string": "nearley-test ./src/foal.js -qi "
+  },
+  "dependencies": {
+    "moo": "^0.4.3",
+    "nearley": "^2.11.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2"
+  },
+  "author": "J. Alex Ruble",
+  "license": "MIT"
+}
