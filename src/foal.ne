@@ -9,13 +9,13 @@
     // const id = getByIndex(0);
 %}
 
-foal -> number
+foal -> number _ {% id %}
 
 
 number -> digit:* {% concatAll %}
 
 dee -> [dD]
 
-digit -> _ [0-9] _ {% getByIndex(1) %}
+digit -> _ [0-9] {% getByIndex(1) %}
 
 _ -> [ \t\n\v\f]:* {% nuller %}
