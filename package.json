@@ -2,11 +2,12 @@
   "name": "foal",
   "version": "0.1.0",
   "description": "A DSL for dice rolls",
-  "main": "index.js",
+  "main": "./entry.js",
   "repository": "https://github.com/calamitizer/foal.git",
   "scripts": {
     "c": "nearleyc ./src/foal.ne -o ./src/foal.js",
-    "t-str": "nearley-test ./src/foal.js -qi "
+    "t-str": "nearley-test ./src/foal.js -qi",
+    "ct-str": "yarn c && yarn t-str"
   },
   "dependencies": {
     "moo": "^0.4.3",
