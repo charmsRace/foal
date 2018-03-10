@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    const expectations = [
+    const goodSyntax = [
         {
             title: 'test 1',
             in: '',
@@ -24,5 +24,13 @@
         },
     ];
 
-    module.exports = expectations;
+    const badSyntax = [
+        'one',
+        'roll a d6',
+    ];
+
+    module.exports = {
+        goodSyntax,
+        badSyntax,
+    };
 })();
