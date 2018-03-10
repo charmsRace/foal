@@ -3,10 +3,14 @@
 
     const ava = require('ava');
 
-    ava.test('metatest', async t => {
-        const foo = 2;
+    const foal = require('../entry.js');
 
-        t.is(await foo, 2);
+    ava.test('parse numbers', async t => {
+
+        const parsings = await foal('   2 33  4');
+
+        t.is(parsings.length, 1);
+        t.is(parsings[0], '2334');
     });
 
 })();
