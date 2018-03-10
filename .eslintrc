@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "parserOptions": {
+        "ecmaVersion": 2017,
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true,
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "ignoreComments": true,
+            },
+        ],
+        "quotes": [
+            "error",
+            "single",
+        ],
+        "semi": [
+            "error",
+            "always",
+        ],
+    },
+}
