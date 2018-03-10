@@ -10,6 +10,14 @@
     },
     "extends": "eslint:recommended",
     "rules": {
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always",
+                "objects": "always",
+                "functions": "never",
+            },
+        ],
         "indent": [
             "error",
             4,
@@ -24,6 +32,10 @@
         "semi": [
             "error",
             "always",
+        ],
+        "wrap-iife": [
+            "error",
+            "inside",
         ],
     },
 }

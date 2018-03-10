@@ -11,15 +11,15 @@
             match: /\s+/,
             lineBreaks: true,
         },
-        // A non-negative integer,
+        // A non-negative integer
         n: /(?:0|[1-9]\d*)/,
         // the "roll a die" operator -
         // mathematically speaking, a function from
         // { non-negative integers } -> [n]
-        die: /[dD]/,
+        die: /[dxi]/i,
         // Unary operators,
         // from P(N) -> N
-        op: /[=#+^vVzZ]/,
+        op: /[=#+^vz]/i,
         '=': '=', // identity
         '+': '+', // sum
         '^': '^', // max
@@ -28,9 +28,8 @@
                   // counts elements,
                   // i.e. sum of zeroth powers
         'Z': 'Z', // zero operator
-                  // constant function
-                  // returning 0
-                  // (additive identity)
+                  // constant function returning 0
+                  // (the additive identity)
         // a comment, always after the expression,
         // separated by : 
         comment: /:[^]*?$/,
@@ -41,4 +40,4 @@
     let lexer = moo.compile(rules);
 
     module.exports = lexer;
-}());
+})();

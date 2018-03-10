@@ -11,10 +11,9 @@
 
 foal -> number _ {% id %}
 
+dee -> _ [dxiDXI] {% id %}
 
 number -> digit:* {% concatAll %}
-
-dee -> [dD]
 
 digit -> _ [0-9] {% getByIndex(1) %}
 

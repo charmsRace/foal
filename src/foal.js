@@ -12,10 +12,10 @@ var grammar = {
     Lexer: undefined,
     ParserRules: [
     {"name": "foal", "symbols": ["number", "_"], "postprocess": id},
+    {"name": "dee", "symbols": ["_", /[dxiDXI]/], "postprocess": id},
     {"name": "number$ebnf$1", "symbols": []},
     {"name": "number$ebnf$1", "symbols": ["number$ebnf$1", "digit"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "number", "symbols": ["number$ebnf$1"], "postprocess": concatAll},
-    {"name": "dee", "symbols": [/[dD]/]},
     {"name": "digit", "symbols": ["_", /[0-9]/], "postprocess": getByIndex(1)},
     {"name": "_$ebnf$1", "symbols": []},
     {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", /[ \t\n\v\f]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
