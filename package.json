@@ -18,7 +18,8 @@
   },
   "ava": {
     "files": [
-      "./tests/**/*.js"
+      "./tests/**/*.js",
+      "!**/*[eE]xpectations*"
     ]
   },
   "dependencies": {
