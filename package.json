@@ -11,12 +11,12 @@
     "💯"
   ],
   "scripts": {
-    "c": "nearleyc ./src/foal.ne -o ./src/foal.js",
-    "t-str": "nearley-test ./src/foal.js -qi",
-    "ct-str": "yarn c && yarn t-str",
+    "compile": "nearleyc ./src/foal.ne -o ./src/foal.js",
+    "test-str": "nearley-test ./src/foal.js -qi",
+    "ct-str": "yarn compile && yarn t-str",
     "lint": "eslint . || exit 0",
     "test": "ava || exit 0",
-    "build": "yarn lint && yarn c && yarn test"
+    "build": "yarn lint && yarn compile && yarn test"
   },
   "ava": {
     "files": [

@@ -31,13 +31,13 @@
                   // constant function returning 0
                   // (the additive identity)
         // a comment, always after the expression,
-        // separated by : 
+        // separated by :
         comment: /:[^]*?$/,
         // Syntax error
         error: moo.error,
     };
 
-    let lexer = moo.compile(rules);
+    const lexer = moo.compile(rules);
 
     module.exports = lexer;
 })();

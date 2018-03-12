@@ -18,6 +18,18 @@
                 "functions": "never",
             },
         ],
+        "curly": [
+            "error",
+            "all",
+        ],
+        "eol-last": [
+            "error",
+            "always",
+        ],
+        "eqeqeq": [
+            "error",
+            "always",
+        ],
         "indent": [
             "error",
             4,
@@ -25,9 +37,24 @@
                 "ignoreComments": true,
             },
         ],
+        "no-tabs": [
+            "error",
+        ],
+        "no-trailing-spaces": [
+            "error",
+        ],
+        "no-var": [
+            "error",
+        ],
+        "prefer-const": [
+            "error",
+        ],
         "quotes": [
             "error",
             "single",
+        ],
+        "require-await": [
+            "error",
         ],
         "semi": [
             "error",
@@ -36,6 +63,10 @@
         "wrap-iife": [
             "error",
             "inside",
+        ],
+        "yoda": [
+            "error",
+            "never",
         ],
     },
 }
