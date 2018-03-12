@@ -10,7 +10,7 @@
         const parsings = await foal(input);
 
         t.is(parsings.length, 1);
-        t.is(parsings[0], expected);
+        t.deepEqual(parsings[0], expected);
     };
 
     shouldParseAs.title = (provided, input, expected) => {
@@ -20,21 +20,27 @@
     };
 
     for (const ex of expectations.goodSyntax) {
-        ava.test(ex.title, shouldParseAs, ex.in, ex.out);
+        const title = ex.title
+            ? ex.title
+            : '';
+        ava.test(title, shouldParseAs, ex.in, ex.out);
     }
 
-    const shouldNotParse = async (t, input) => {
-        await t.throws(() => Promise.resolve(foal.parse(input)));
+    const shouldNotParse = (t, input) => {
+        t.throws(() => foal(input));
     };
 
     shouldNotParse.title = (provided, input) => {
         return provided
             ? `${provided}: '${input}' -> X`
-            : `foal should not parse '${input}`;
+            : `foal should not parse '${input}'`;
     };
 
     for (const ex of expectations.badSyntax) {
-        ava.test(shouldNotParse, ex);
+        const title = ex.title
+            ? ex.title
+            : '';
+        ava.test(title, shouldNotParse, ex);
     }
 
 })();
