@@ -13,13 +13,13 @@
         },
         // A non-negative integer
         n: /(?:0|[1-9]\d*)/,
-        // the "roll a die" operator -
+        // a "roll a die" operator -
         // mathematically speaking, a function from
         // { non-negative integers } -> [n]
-        die: /[dxi]/i,
+        dee: /[dxiDXI]/,
         // Unary operators,
         // from P(N) -> N
-        op: /[=#+^vz]/i,
+        op: /[=#+^vVzZ]/,
         '=': '=', // identity
         '+': '+', // sum
         '^': '^', // max

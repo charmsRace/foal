@@ -59,7 +59,7 @@
 
     const badSyntax = [
         'one',
-        'roll a d6',
+        'roLl a d6',
     ];
 
     module.exports = {

@@ -2,26 +2,33 @@
 # o.s
 
 @ {%
+    const lexer = require('./lexer.js');
+
     const toNull = () => null;
     const makeArray = d => [d];
     const concatAll = d => d[0].join('');
     const getByIndex = i => d => d[i];
     // const id = getByIndex(0);
 
-    const parseDie = d => ({
+    const parseDie = d => {
+        console.log('d[1]');
+        console.log(d[1]);
+        return {
         type: 'die',
-        dee: d[0].toLowerCase(),
-        arg: d[1],
-    });
+        dee: d[1].value.toLowerCase(),
+        arg: d[2],
+    }};
 %}
+
+@lexer lexer
 
 foal -> die _ {% id %}
 
 die ->
-      dee number {% parseDie %}
+      _ %dee number {% parseDie %}
     | number {% id %}
 
-dee -> _ [dxiDXI] {% getByIndex(1) %}
+dxee -> [dxiDXI] {% getByIndex(1) %}
 
 number -> digit:* {% concatAll %}
 

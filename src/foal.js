@@ -3,24 +3,29 @@
 (function () {
 function id(x) { return x[0]; }
 
+    const lexer = require('./lexer.js');
+
     const toNull = () => null;
     const makeArray = d => [d];
     const concatAll = d => d[0].join('');
     const getByIndex = i => d => d[i];
     // const id = getByIndex(0);
 
-    const parseDie = d => ({
+    const parseDie = d => {
+        console.log('d[1]');
+        console.log(d[1]);
+        return {
         type: 'die',
-        dee: d[0].toLowerCase(),
-        arg: d[1],
-    });
+        dee: d[1].value.toLowerCase(),
+        arg: d[2],
+    }};
 var grammar = {
-    Lexer: undefined,
+    Lexer: lexer,
     ParserRules: [
     {"name": "foal", "symbols": ["die", "_"], "postprocess": id},
-    {"name": "die", "symbols": ["dee", "number"], "postprocess": parseDie},
+    {"name": "die", "symbols": ["_", (lexer.has("dee") ? {type: "dee"} : dee), "number"], "postprocess": parseDie},
     {"name": "die", "symbols": ["number"], "postprocess": id},
-    {"name": "dee", "symbols": ["_", /[dxiDXI]/], "postprocess": getByIndex(1)},
+    {"name": "dxee", "symbols": [/[dxiDXI]/], "postprocess": getByIndex(1)},
     {"name": "number$ebnf$1", "symbols": []},
     {"name": "number$ebnf$1", "symbols": ["number$ebnf$1", "digit"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "number", "symbols": ["number$ebnf$1"], "postprocess": concatAll},
