@@ -13,7 +13,7 @@
   "scripts": {
     "compile": "nearleyc ./src/foal.ne -o ./src/foal.js",
     "test-str": "nearley-test ./src/foal.js -qi",
-    "ct-str": "yarn compile && yarn t-str",
+    "ct-str": "yarn compile && yarn test-str",
     "lint": "eslint . || exit 0",
     "test": "ava || exit 0",
     "build": "yarn lint && yarn compile && yarn test"

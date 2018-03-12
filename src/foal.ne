@@ -7,11 +7,21 @@
     const concatAll = d => d[0].join('');
     const getByIndex = i => d => d[i];
     // const id = getByIndex(0);
+
+    const parseDie = d => ({
+        type: 'die',
+        dee: d[0],
+        arg: d[2],
+    });
 %}
 
-foal -> number _ {% id %}
+foal -> die _ {% id %}
 
-dee -> _ [dxiDXI] {% id %}
+die ->
+      dee _ number {% parseDie %}
+    | number {% id %}
+
+dee -> _ [dxiDXI] {% getByIndex(1) %}
 
 number -> digit:* {% concatAll %}
 
