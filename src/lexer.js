@@ -13,6 +13,7 @@
         },
         // A non-negative integer
         n: /(?:0|[1-9]\d*)/,
+        //digit: /\d/,
         // a "roll a die" operator -
         // mathematically speaking, a function from
         // { non-negative integers } -> [n]
