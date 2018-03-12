@@ -11,21 +11,17 @@ function id(x) { return x[0]; }
     const getByIndex = i => d => d[i];
     // const id = getByIndex(0);
 
-    const parseDie = d => {
-        console.log('d[1]');
-        console.log(d[1]);
-        return {
+    const parseDie = d => ({
         type: 'die',
         dee: d[1].value.toLowerCase(),
         arg: d[2],
-    }};
+    });
 var grammar = {
     Lexer: lexer,
     ParserRules: [
     {"name": "foal", "symbols": ["die", "_"], "postprocess": id},
     {"name": "die", "symbols": ["_", (lexer.has("dee") ? {type: "dee"} : dee), "number"], "postprocess": parseDie},
     {"name": "die", "symbols": ["number"], "postprocess": id},
-    {"name": "dxee", "symbols": [/[dxiDXI]/], "postprocess": getByIndex(1)},
     {"name": "number$ebnf$1", "symbols": []},
     {"name": "number$ebnf$1", "symbols": ["number$ebnf$1", "digit"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "number", "symbols": ["number$ebnf$1"], "postprocess": concatAll},

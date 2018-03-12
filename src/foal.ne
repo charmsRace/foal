@@ -10,14 +10,11 @@
     const getByIndex = i => d => d[i];
     // const id = getByIndex(0);
 
-    const parseDie = d => {
-        console.log('d[1]');
-        console.log(d[1]);
-        return {
+    const parseDie = d => ({
         type: 'die',
         dee: d[1].value.toLowerCase(),
         arg: d[2],
-    }};
+    });
 %}
 
 @lexer lexer
@@ -27,8 +24,6 @@ foal -> die _ {% id %}
 die ->
       _ %dee number {% parseDie %}
     | number {% id %}
-
-dxee -> [dxiDXI] {% getByIndex(1) %}
 
 number -> digit:* {% concatAll %}
 

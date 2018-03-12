@@ -33,8 +33,6 @@
         // a comment, always after the expression,
         // separated by :
         comment: /:[^]*?$/,
-        // Syntax error
-        error: moo.error,
     };
 
     const lexer = moo.compile(rules);
