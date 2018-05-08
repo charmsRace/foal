@@ -20,9 +20,7 @@
     };
 
     for (const ex of expectations.goodSyntax) {
-        const title = ex.title
-            ? ex.title
-            : '';
+        const title = ex.title || '';
         ava.test(title, shouldParseAs, ex.in, ex.out);
     }
 

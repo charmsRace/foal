@@ -4,8 +4,45 @@
     const moo = require('moo');
 
     const rules = {
+
+        // nothing
+        none: /.\A/,
+
         // Dear foal,
         hi: />f:/, // needs ^?
+
+        space: / /,
+
+        // separation operator -
+        // for demarking elements in a multiset
+        sep: /,/,
+
+        // a sequence of numerals
+        number: /\d+/,
+
+        // a "roll a die" operator -
+        // mathematically speaking, a function from
+        // { non-negative integers } -> [n]
+        dee: /[dDiIxX]/,
+
+        // Unary operators,
+        // from P(N) -> N
+        unop: /[=#+^vVzZ]/,
+
+        // Delimiters ()[]{}
+        parenLeft: /\(/,
+        parenRight: /\)/,
+        bracketLeft: /\[/,
+        bracketRight: /\]/,
+        braceLeft: /\{/,
+        braceRight: /\}/,
+
+        // a comment, always after the expression,
+        // separated by :
+        comment: /:\/\/.*?$/,
+    };
+
+    const rest = {
         // Whitespace, including newlines
         space: {
             match: /\s+/,
@@ -13,14 +50,6 @@
         },
         // A non-negative integer
         n: /(?:0|[1-9]\d*)/,
-        //digit: /\d/,
-        // a "roll a die" operator -
-        // mathematically speaking, a function from
-        // { non-negative integers } -> [n]
-        dee: /[dxiDXI]/,
-        // Unary operators,
-        // from P(N) -> N
-        op: /[=#+^vVzZ]/,
         '=': '=', // identity
         '+': '+', // sum
         '^': '^', // max
@@ -31,10 +60,7 @@
         'Z': 'Z', // zero operator
                   // constant function returning 0
                   // (the additive identity)
-        // a comment, always after the expression,
-        // separated by :
-        comment: /:[^]*?$/,
-    };
+    }
 
     const lexer = moo.compile(rules);
 
