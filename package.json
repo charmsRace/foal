@@ -11,9 +11,9 @@
     "💯"
   ],
   "scripts": {
-    "compile": "nearleyc ./src/foal.ne -o ./src/foal.js",
-    "test-str": "nearley-test ./src/foal.js -qi",
-    "ct-str": "yarn compile && yarn test-str",
+    "compile": "nearleyc ./src/foal2.ne -o ./src/foal.js",
+    "test:s": "nearley-test ./src/foal.js -qi",
+    "ct:s": "yarn compile && yarn test:s",
     "lint": "eslint . || exit 0",
     "test": "ava || exit 0",
     "build": "yarn lint && yarn compile && yarn test"
@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "moo": "^0.4.3",
-    "nearley": "^2.13.0"
+    "nearley": "^2.13.0",
+    "treehugger": "^0.0.2"
   },
   "devDependencies": {
     "ava": "^0.25.0",
